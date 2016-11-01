@@ -14,7 +14,7 @@ public class TryApplication {
         Student student = (Student) context.getBean("student");
         student.getName();
         student.getAge();
-        student.printThrowException();
+        //student.printThrowException();
     }
 
 }
