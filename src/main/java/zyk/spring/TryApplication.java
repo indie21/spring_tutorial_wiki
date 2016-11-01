@@ -1,17 +1,18 @@
 package zyk.spring;
 
-import java.util.List;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.apache.log4j.Logger;
 
-@SpringBootApplication
 public class TryApplication {
-
+    static Logger log = Logger.getLogger(TryApplication.class.getName());
     public static void main(String[] args) {
-
-        ApplicationContext context =
+        ApplicationContext context = 
             new ClassPathXmlApplicationContext("Beans.xml");
+        log.info("Going to create HelloWord Obj");
+        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        obj.getMessage();
+        log.info("Exiting the program");
     }
-
 }
